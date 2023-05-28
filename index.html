@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vision Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            background-color: #d03f33;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b83027;
+        }
+
+        #vision {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Estilos específicos para cada visión */
+        #vision.Pyro {
+            color: #f24b31;
+        }
+
+        #vision.Hydro {
+            color: #3399ff;
+        }
+
+        #vision.Aero {
+            color: #88ccff;
+        }
+
+        #vision.Electro {
+            color: #ffd700;
+        }
+
+        #vision.Geo {
+            color: #d2b48c;
+        }
+
+        #vision.Natura {
+            color: #50c878;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vision Selector</h1>
+        <p>Hola, esto es el selector de Visión de The Secrets Unfold</p>
+        <div>
+            <button class="btn" onclick="selectVision()">Seleccionar Visión</button>
+        </div>
+        <div>
+            <p id="vision"></p>
+        </div>
+    </div>
+
+    <script>
+        // Array de visiones
+        const visions = [
+            'Pyro',
+            'Hydro',
+            'Aero',
+            'Electro',
+            'Geo',
+            'Natura'
+        ];
+
+        function selectVision() {
+            const index = Math.floor(Math.random() * visions.length); // Obtener un índice aleatorio
+            const vision = visions[index]; // Obtener la visión correspondiente al índice
+            alert(vision);
+
+            document.getElementById("vision").innerHTML = vision; // Mostrar la visión en el HTML
+            document.getElementById("vision").className = vision; // Asignar la clase de la visión al elemento
+
+            // Eliminar la visión del array
+            visions.splice(index, 1);
+        }
+    </script>
+</body>
+
+</html>
