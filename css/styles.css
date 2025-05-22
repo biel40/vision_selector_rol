@@ -1,0 +1,458 @@
+/* Genshin Impact Inspired Styles */
+@font-face {
+    font-family: 'GenshinFont';
+    src: url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+}
+
+:root {
+    --pyro-color: #f24b31;
+    --hydro-color: #3399ff;
+    --anemo-color: #88ccff;
+    --electro-color: #a757cb;
+    --geo-color: #e9b431;
+    --dendro-color: #50c878;
+    --genshin-gold: #e6c78b;
+    --genshin-blue: #3b5e8c;
+}
+
+body {
+    font-family: 'GenshinFont', 'Cinzel', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a1020;
+    background-image: url('https://i.imgur.com/JfVNOlc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(10, 16, 32, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(230, 199, 139, 0.3);
+    border: 1px solid var(--genshin-gold);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--pyro-color), 
+        var(--hydro-color), 
+        var(--anemo-color), 
+        var(--electro-color), 
+        var(--geo-color), 
+        var(--dendro-color));
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    color: var(--genshin-gold);
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(230, 199, 139, 0.5);
+    letter-spacing: 3px;
+}
+
+p {
+    color: #e0e0e0;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--genshin-blue);
+    color: #fff;
+    border: 2px solid var(--genshin-gold);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(230, 199, 139, 0.4);
+    font-family: 'GenshinFont', 'Cinzel', serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(230, 199, 139, 0.5);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:active {
+    transform: translateY(-2px);
+}
+
+#vision-container {
+    text-align: center;
+    position: relative;
+    height: 250px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#vision {
+    font-size: 0;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 25px currentColor;
+    display: inline-block;
+    padding: 25px 50px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    transform: scale(0.5);
+    margin: 0 auto;
+}
+
+#vision.reveal {
+    font-size: 48px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#vision::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    z-index: -1;
+}
+
+#vision.Pyro {
+    color: var(--pyro-color);
+    box-shadow: 0 0 40px rgba(242, 75, 49, 0.6);
+}
+
+#vision.Hydro {
+    color: var(--hydro-color);
+    box-shadow: 0 0 40px rgba(51, 153, 255, 0.6);
+}
+
+#vision.Aero {
+    color: var(--anemo-color);
+    box-shadow: 0 0 40px rgba(136, 204, 255, 0.6);
+}
+
+#vision.Electro {
+    color: var(--electro-color);
+    box-shadow: 0 0 40px rgba(167, 87, 203, 0.6);
+}
+
+#vision.Geo {
+    color: var(--geo-color);
+    box-shadow: 0 0 40px rgba(233, 180, 49, 0.6);
+}
+
+#vision.Natura {
+    color: var(--dendro-color);
+    box-shadow: 0 0 40px rgba(80, 200, 120, 0.6);
+}
+
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 0;
+}
+
+.element-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 30px;
+    display: block;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+}
+
+.element-icon.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.vision-history {
+    margin: 40px auto 20px;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    border: 1px solid rgba(230, 199, 139, 0.4);
+    max-width: 90%;
+}
+
+.vision-history h3 {
+    color: var(--genshin-gold);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(230, 199, 139, 0.4);
+}
+
+.vision-history-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.vision-history-item {
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.vision-history-item:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.vision-history-item.Pyro {
+    background-color: rgba(242, 75, 49, 0.2);
+    border: 1px solid var(--pyro-color);
+    color: var(--pyro-color);
+}
+
+.vision-history-item.Hydro {
+    background-color: rgba(51, 153, 255, 0.2);
+    border: 1px solid var(--hydro-color);
+    color: var(--hydro-color);
+}
+
+.vision-history-item.Aero {
+    background-color: rgba(136, 204, 255, 0.2);
+    border: 1px solid var(--anemo-color);
+    color: var(--anemo-color);
+}
+
+.vision-history-item.Electro {
+    background-color: rgba(167, 87, 203, 0.2);
+    border: 1px solid var(--electro-color);
+    color: var(--electro-color);
+}
+
+.vision-history-item.Geo {
+    background-color: rgba(233, 180, 49, 0.2);
+    border: 1px solid var(--geo-color);
+    color: var(--geo-color);
+}
+
+.vision-history-item.Natura {
+    background-color: rgba(80, 200, 120, 0.2);
+    border: 1px solid var(--dendro-color);
+    color: var(--dendro-color);
+}
+
+/* Music Button Styles */
+.music-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(10, 16, 32, 0.7);
+    border: 2px solid var(--genshin-gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(230, 199, 139, 0.4);
+    overflow: hidden;
+}
+
+.music-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--pyro-color), var(--hydro-color), var(--anemo-color), var(--electro-color), var(--geo-color), var(--dendro-color));
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(230, 199, 139, 0.6);
+}
+
+.music-button:active {
+    transform: scale(0.95);
+}
+
+.music-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--genshin-gold);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.music-note {
+    display: inline-block;
+    animation: float-note 2s infinite ease-in-out;
+}
+
+@keyframes float-note {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.music-button.playing .music-icon {
+    animation: pulse-icon 1s infinite alternate;
+}
+
+.music-button.playing::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    border: 2px solid var(--genshin-gold);
+    opacity: 0;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-icon {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 25px 15px;
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 32px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 18px;
+    }
+    
+    #vision.reveal {
+        font-size: 36px;
+        padding: 20px 30px;
+    }
+    
+    .vision-history {
+        padding: 15px;
+    }
+    
+    .vision-history h3 {
+        font-size: 20px;
+    }
+    
+    .music-button {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .music-icon {
+        font-size: 20px;
+    }
+}

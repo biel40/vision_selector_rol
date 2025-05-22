@@ -3,95 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Vision Selector</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        p {
-            color: #666;
-        }
-
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            text-align: center;
-            background-color: #d03f33;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #b83027;
-        }
-
-        #vision {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Estilos específicos para cada visión */
-        #vision.Pyro {
-            color: #f24b31;
-        }
-
-        #vision.Hydro {
-            color: #3399ff;
-        }
-
-        #vision.Aero {
-            color: #88ccff;
-        }
-
-        #vision.Electro {
-            color: #ffd700;
-        }
-
-        #vision.Geo {
-            color: #d2b48c;
-        }
-
-        #vision.Natura {
-            color: #50c878;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Selector - The Secrets Unfold</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/element-icons.css">
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
 
 <body>
+    <div class="particles-container"></div>
+    
+    <div class="music-button" id="music-toggle">
+        <div class="music-icon">
+            <span class="music-note">♪</span>
+        </div>
+    </div>
+    
     <div class="container">
-        <h1>Vision Selector</h1>
-        <p>Hola, esto es el selector de Visión de The Secrets Unfold</p>
-        <div>
+        <h1>Vision Selector App</h1>
+        <p>Bienvenido al selector de Visión de The Secrets Unfold</p>
+        
+        <div class="btn-container">
             <button class="btn" onclick="selectVision()">Seleccionar Visión</button>
         </div>
-        <div>
+        
+        <div id="vision-container">
             <p id="vision"></p>
+        </div>
+        
+        <div class="vision-history">
+            <h3>Visiones Obtenidas</h3>
+            <div class="vision-history-items"></div>
         </div>
     </div>
 
@@ -105,19 +48,8 @@
             'Geo',
             'Natura'
         ];
-
-        function selectVision() {
-            const index = Math.floor(Math.random() * visions.length); // Obtener un índice aleatorio
-            const vision = visions[index]; // Obtener la visión correspondiente al índice
-            alert(vision);
-
-            document.getElementById("vision").innerHTML = vision; // Mostrar la visión en el HTML
-            document.getElementById("vision").className = vision; // Asignar la clase de la visión al elemento
-
-            // Eliminar la visión del array
-            visions.splice(index, 1);
-        }
     </script>
+    <script src="js/animations.js"></script>
 </body>
 
 </html>
